@@ -1,0 +1,26 @@
+[
+    {
+        "title": "SAP Teched 2023 Countdown",
+        "route": "first",
+        "image": "https://i.pinimg.com/236x/6a/46/47/6a4647960be2f164b6a7e501a0c00122.jpg"
+    },
+    {
+        "title": "Covid19",
+        "route": "second",
+        "image": "https://img.freepik.com/free-photo/graphic-illustration-coronavirus-disease-pandemic-white-background_181624-24641.jpg?size=626&ext=jpg&ga=GA1.2.284766853.1695830550&semt=ais"
+    },
+
+    {
+        "title": "Vaccination Tracker",
+        "route": "third",
+        "image": "https://media.istockphoto.com/id/1312590804/photo/hand-in-protective-glove-holds-covid-19-vaccine-glass-vial.webp?b=1&s=170667a&w=0&k=20&c=KIotg_YNScg26DmrIwGyt_zoRj9ebkhHfsiOBk2doDQ="
+    },
+
+    
+    {
+        "title": "Pollution Tracker",
+        "route": "Ext-third",
+        "url" :  "http://localhost:8081/index.html?sap-ui-xx-viewCache=false",
+        "image": "https://i.pinimg.com/236x/cd/12/cd/cd12cd8eee3da7803b616e38b3904372.jpg"
+    }
+]

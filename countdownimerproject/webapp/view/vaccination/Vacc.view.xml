@@ -1,0 +1,167 @@
+<mvc:View
+    controllerName="countdown.countdownimerproject.controller.vaccination.Vacc"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:unified="sap.ui.unified"
+    displayBlock="true"
+>
+    <!-- <Shell > -->
+    <Page
+        id="tiles"
+        title="{i18n>title}"
+        showHeader="true"
+        titleAlignment="Center"
+    >
+        <customHeader>
+            <Toolbar>
+                <Button
+                    type="Back"
+                    press="onPressBack"
+                />
+                <ToolbarSpacer />
+                <Title text="Vaccination Tracker" />
+                <ToolbarSpacer />
+            </Toolbar>
+        </customHeader>
+        <subHeader>
+            <Toolbar>
+                <ToolbarSpacer />
+
+                <RadioButton
+                    groupName="radio1"
+                    valueState="Success"
+                    text="Table"
+                    selected="{view>/table}"
+                />
+                <RadioButton
+                    groupName="radio1"
+                    valueState="Warning"
+                    text="Calendar"
+                    selected="{view>/calendar}"
+                />
+                <ToolbarSpacer />
+            </Toolbar>
+        </subHeader>
+
+        <Table
+            backgroundDesign="Translucent"
+            alternateRowColors="true"
+            id="table1"
+            width="100%"
+            visible="{view>/table}"
+            inset="false"
+            contextualWidth="inherit"
+            items="{vacc>/}"
+        >
+            <columns>
+                <Column
+                    width="09em"
+                    minScreenWidth="Tablet"
+                >
+                    <Text text="Vaccination Name" />
+                </Column>
+
+                <Column
+                    width="09em"
+                    minScreenWidth="Tablet"
+                >
+                    <Text text="Company" />
+                </Column>
+
+                <Column
+                    width="09em"
+                    minScreenWidth="Tablet"
+                >
+                    <Text text="Date Given/To be given" />
+                </Column>
+
+                <Column
+                    width="09em"
+                    minScreenWidth="Tablet"
+                >
+                    <Text text="Type of Vaccination" />
+                </Column>
+            </columns>
+
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text
+                            text="{vacc>vacc}"
+                            id="1"
+                        />
+
+                        <Text
+                            text="{vacc>company}"
+                            id="2"
+                        />
+
+                        <!-- <Text
+                                text="{vacc>date}"
+                                id="3"
+                            />  -->
+
+                        <ObjectNumber
+                            class="sapUiSmallMarginBottom"
+                            number="{vacc>date}"
+                                state="{path: 'vacc>date', formatter: '.formatState'}"
+                        />
+
+                        <!--       <Text
+                                text="{vacc>type}"
+                                id="4"
+                            />                            -->
+
+                        <ObjectNumber
+                            class="sapUiSmallMarginBottom"
+                            number="{vacc>type}"
+                            state="{path: 'vacc>type', formatter: '.formatStateType'}"
+                        />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        <VBox
+            class="sapUiSmallMargin"
+            visible="{view>/calendar}"
+        >
+            <SinglePlanningCalendar
+                id="SPC1"
+                class="sapUiSmallMarginTop"
+                title="My Calendar"
+                viewChange="handleViewChange"
+                appointments="{path: 'vacc>/'}"
+            >
+                <views>
+                    <SinglePlanningCalendarDayView
+                        key="DayView"
+                        title="Day"
+                    />
+                    <SinglePlanningCalendarWorkWeekView
+                        key="WorkWeekView"
+                        title="Work Week"
+                    />
+                    <SinglePlanningCalendarWeekView
+                        key="WeekView"
+                        title="Week"
+                    />
+                    <SinglePlanningCalendarMonthView
+                        key="MonthView"
+                        title="Month"
+                    />
+                </views>
+                <appointments>
+                    <unified:CalendarAppointment
+                        title="{vacc>vacc}"
+                        text="{vacc>company}"
+                        type="{vacc>ctype}"
+                        startDate="{path: 'vacc>date', formatter: '.formatDate'}"
+                        endDate="{path: 'vacc>date', formatter: '.formatDate'}"
+                    />
+                </appointments>
+            </SinglePlanningCalendar>
+        </VBox>
+        <content />
+    </Page>
+    <!-- </Shell> -->
+</mvc:View>

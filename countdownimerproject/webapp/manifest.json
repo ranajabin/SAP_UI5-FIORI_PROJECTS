@@ -1,0 +1,175 @@
+{
+  "_version": "1.49.0",
+  "sap.app": {
+    "id": "countdown.countdownimerproject",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.10.6",
+      "toolsId": "abdf6927-f2f4-4ed6-82c6-d53990db5a49"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.118.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "countdown.countdownimerproject.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "countdown.countdownimerproject.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RouteTiles",
+          "pattern": ":?query:",
+          "target": [
+            "TargetTiles"
+          ]
+        },
+        {
+          "name": "first",
+          "pattern": "first",
+          "target": [
+            "Countdown"
+          ]
+        },
+        {
+          "name": "second",
+          "pattern": "second",
+          "target": [
+            "Covid19"
+          ]
+        },
+        {
+          "name": "second-list",
+          "pattern": "second-list",
+          "target": [
+            "Covid19-List"
+          ]
+        },
+        {
+          "name": "second-graph",
+          "pattern": "second-graph",
+          "target": [
+            "Covid19-Pie"
+          ]
+        },
+        {
+          "name": "third",
+          "pattern": "third",
+          "target": [
+            "Vacc"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetTiles": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Tiles",
+          "viewName": "Tiles"
+        },
+        "Countdown": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "countdown.Countdown",
+          "viewName": "countdown.Countdown",
+          "controlId": "app"
+        },
+        "Covid19": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "covid.Covid19",
+          "viewName": "covid.Covid19",
+          "controlId": "app"
+        },
+        "Covid19-List": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "covid.List",
+          "viewName": "covid.List",
+          "controlId": "app"
+        },
+        "Covid19-Pie": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "covid.Pie",
+          "viewName": "covid.Pie",
+          "controlId": "app"
+        },
+        "Vacc": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "vaccination.Vacc",
+          "viewName": "vaccination.Vacc",
+          "controlId": "app"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "countdown.countdownimerproject.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

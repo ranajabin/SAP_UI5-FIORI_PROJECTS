@@ -1,0 +1,34 @@
+<mvc:View
+    controllerName="countdown.countdownimerproject.controller.covid.List"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true"
+>
+    <!-- <Shell > -->
+    <Page
+        id="tiles"
+        title="Latest Covid Data"
+        showHeader="true"
+        titleAlignment="Center"
+        showNavButton="true"
+        navButtonPress="onNavBack"
+    >
+        <content>
+            <List
+                id="myList"
+                headerText="Total Cases Count :- {Latest>/data/summary/total}"
+                footerText="Latest Covid Data"
+                items="{Latest>/data/regional}"
+            >
+                <items>
+                    <StandardListItem
+                        title="{Latest>loc}"
+                        description="Total Cases - {Latest>totalConfirmed}"
+                        info="Deaths - {Latest>deaths}"
+                    />
+                </items>
+            </List>
+        </content>
+    </Page>
+    <!-- </Shell> -->
+</mvc:View>

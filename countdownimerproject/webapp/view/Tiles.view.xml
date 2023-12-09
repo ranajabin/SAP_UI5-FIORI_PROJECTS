@@ -1,0 +1,29 @@
+<mvc:View
+    controllerName="countdown.countdownimerproject.controller.Tiles"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+>
+    <!-- <Shell > -->
+    <Page
+        id="tiles"
+        title="{i18n>title}"
+        showHeader="false"
+    >
+        <content>
+            <l:VerticalLayout>
+                <l:HorizontalLayout content="{Tiles>/}">
+                    <GenericTile
+                        class="sapUiSmallMarginBegin  sapUiSmallMarginTop tileLayout"
+                        backgroundImage="{Tiles>image}"
+                        frameType="OneByOne"
+                        header="{Tiles>title}"
+                        press="press(${Tiles>route})"
+                    />
+                </l:HorizontalLayout>
+            </l:VerticalLayout>
+        </content>
+    </Page>
+    <!-- </Shell> -->
+</mvc:View>
