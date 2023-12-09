@@ -1,0 +1,53 @@
+<mvc:View
+    controllerName="calendar.planningcalendar.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:unified="sap.ui.unified"
+>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page
+                    id="page"
+                    title="My Project Ideas: Planning Calendar in SAP UI5"
+                >
+                    <content>
+                        <Button
+                            text="Block for Next Meeting"
+                            press="onPressBlock"
+                        />
+                        <PlanningCalendar
+                            id="planningCalendar"
+                            startDate="{path: '/startDate'}"
+                            rows="{path: '/rows'}"
+                            appointmentsVisualization="Filled"
+                            appointmentSelect="handleAppointmentSelect"
+                            showEmptyIntervalHeaders="false"
+                            showWeekNumbers="true"
+                        >
+                            <rows>
+                                <PlanningCalendarRow
+                                    startDate="{startDate}"
+                                    appointments="{appointments}"
+                                >
+                                    <appointments>
+                                        <unified:CalendarAppointment
+                                            resizable="true"
+                                            startDate="{startDate}"
+                                            endDate="{endDate}"
+                                            title="{title}"
+                                            text="{text}"
+                                            type="{type}"
+                                            resize="handleAppointmentResize"
+                                        />
+                                    </appointments>
+                                </PlanningCalendarRow>
+                            </rows>
+                        </PlanningCalendar>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
