@@ -1,0 +1,31 @@
+<mvc:View
+    controllerName="chatbot.simplechatbot.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page
+                    id="page"
+                    title="Simple Chat Bot using SAP UI5"
+                >
+                    <content />
+                    <footer>
+                        <OverflowToolbar>
+                            <ToolbarSpacer />
+                            <Button
+                                text="Click to Chat"
+                                icon="sap-icon://message-popup"
+                                press="handleMessagePopoverPress"
+                            />
+                        </OverflowToolbar>
+                    </footer>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
