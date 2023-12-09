@@ -1,0 +1,26 @@
+<mvc:View
+    controllerName="pollution.pollutiontracker.controller.App"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.f"
+    xmlns:m="sap.m"
+>
+    <m:App id="app">
+        <!-- <FlexibleColumnLayout id = "pollution" backgroundDesign="Solid">
+    <beginColumnPages>
+    <mvc:XMLView id = "beginView" viewName="pollution.pollutiontracker.view.Master"></mvc:XMLView>
+    </beginColumnPages>
+    <midColumnPages>
+     <mvc:XMLView id = "midView" viewName="pollution.pollutiontracker.view.Detail"></mvc:XMLView>
+    </midColumnPages>
+    </FlexibleColumnLayout> -->
+
+        <FlexibleColumnLayout
+            id="_idpollution"
+            backgroundDesign="Solid"
+            stateChange=".onStateChanged"
+            layout="{/layout}"
+        />
+    </m:App>
+</mvc:View>

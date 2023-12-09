@@ -1,0 +1,75 @@
+<mvc:View
+    controllerName="pollution.pollutiontracker.controller.City"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout"
+>
+    <Page
+        id="page"
+        title="Pollution Tracker"
+    >
+        <!-- <content > -->
+<!-- 
+        	<ux:navigationActions>
+							<m:OverflowToolbarButton type="Transparent" icon="sap-icon://full-screen" press="handleFullScreen" id="enterFullScreenBtn" tooltip="Enter Full Screen Mode" visible="{= ${/actionButtonsInfo/midColumn/fullScreen} !== null }"/>
+							<m:OverflowToolbarButton type="Transparent" icon="sap-icon://exit-full-screen" press="handleExitFullScreen" id="exitFullScreenBtn" tooltip="Exit Full Screen Mode" visible="{= ${/actionButtonsInfo/midColumn/exitFullScreen} !== null }"/>
+							<m:OverflowToolbarButton type="Transparent" icon="sap-icon://decline" press="handleClose"  tooltip="Close middle column" visible="{= ${/actionButtonsInfo/midColumn/closeColumn} !== null }"/>
+						</ux:navigationActions> -->
+        <f:DynamicPage
+            id="dynamicPageId"
+            headerExpanded="{}"
+            toggleHeaderOnTitleClick="{}"
+        >
+            <f:title>
+                <f:DynamicPageTitle>
+                    <f:heading>
+                        <Title text="City wise Pollution" />
+                    </f:heading>
+                </f:DynamicPageTitle>
+            </f:title>
+
+            <f:content>
+                <VBox fitContainer="true">
+                    <Table
+                        id="idPollutionTable"
+                        sticky="HeaderToolbar,ColumnHeaders"
+                        inset="false"
+                        items="{Cities>/}"
+                        class="sapFDynamicPageAlignContent"
+                        width="auto"
+                    >
+                        <columns>
+                            <Column width="12em">
+                                <Text text="Country" />
+                            </Column>
+                            <Column
+                                minScreenWidth="Tablet"
+                                hAlign="End"
+                                demandPopin="true"
+                            >
+                                <Text text="AQI" />
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem
+                                press="onCountryPress"
+                            >
+                                <cells>
+                                    <ObjectIdentifier
+                                        title="{Cities>state}"
+                                        text="{Cities>AQI}"
+                                    />
+
+                                    <ObjectNumber number="{Cities>AQI}" />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </VBox>
+            </f:content>
+        </f:DynamicPage>
+        <!-- </content> -->
+    </Page>
+</mvc:View>

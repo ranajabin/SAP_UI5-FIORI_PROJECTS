@@ -1,0 +1,70 @@
+<mvc:View
+    controllerName="pollution.pollutiontracker.controller.Master"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout"
+>
+    <Page
+        id="page"
+        title="Pollution Tracker"
+    >
+        <!-- <content > -->
+        <f:DynamicPage
+            id="dynamicPageId"
+            headerExpanded="{}"
+            toggleHeaderOnTitleClick="{}"
+        >
+            <f:title>
+                <f:DynamicPageTitle>
+                    <f:heading>
+                        <Title text="Countries wise Pollution" />
+                    </f:heading>
+                </f:DynamicPageTitle>
+            </f:title>
+
+            <f:content>
+                <VBox fitContainer="true">
+                    <Table
+                        id="idPollutionTable"
+                        sticky="HeaderToolbar,ColumnHeaders"
+                        inset="false"
+                        items="{countries>/}"
+                        class="sapFDynamicPageAlignContent"
+                        width="auto"
+                    >
+                        <columns>
+                            <Column width="12em">
+                                <Text text="Country" />
+                            </Column>
+                            <Column
+                                minScreenWidth="Tablet"
+                                hAlign="End"
+                                demandPopin="true"
+                            >
+                                <Text text="AQI" />
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem
+                                type="Navigation"
+                                press="onCountryPress"
+                            >
+                                <cells>
+                                    <ObjectIdentifier
+                                        title="{countries>country}"
+                                        text="{countries>AQI}"
+                                    />
+
+                                    <ObjectNumber number="{countries>AQI}" />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </VBox>
+            </f:content>
+        </f:DynamicPage>
+        <!-- </content> -->
+    </Page>
+</mvc:View>
