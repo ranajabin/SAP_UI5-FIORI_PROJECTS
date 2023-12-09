@@ -1,0 +1,32 @@
+<mvc:View
+    controllerName="jsn.jsonmodelproject.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <Button
+                text="Add More"
+                press="addMoreRecord"
+            />
+            <Button
+                text="Additional Values"
+                press="summarizeData"
+            />
+            <VBox items="{oModel>/}">
+                <items>
+                    <Panel
+                        expandable="true"
+                        headerText="{oModel>title}"
+                    >
+                        <Input value="{oModel>text}" />
+                    </Panel>
+                </items>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
