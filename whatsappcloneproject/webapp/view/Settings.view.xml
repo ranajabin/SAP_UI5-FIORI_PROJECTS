@@ -1,0 +1,111 @@
+<mvc:View
+    controllerName="whatsapp.whatsappcloneproject.controller.Settings"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:tnt="sap.tnt"
+    xmlns:fiori="sap.ui.webc.fiori"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+        showHeader="false"
+    >
+        <content>
+            <FlexBox
+                alignItems="Start"
+                justifyContent="Center"
+            >
+                <f:SimpleForm
+                    editable="true"
+                    layout="RepsonsiveGridLayout"
+                    emptySpanL="10"
+                    emptySpanM="10"
+                    class=".sapUiFormResLayout .sapUiFormBackgrTranslucent>div"
+                >
+                    <f:content>
+                        <VBox
+                            alignItems="Center"
+                            margin="100.0rem"
+                        >
+                            <tnt:ToolHeader
+                                width="390px"
+                                class=".sapTntToolHeader .sapMTB"
+                            >
+                                <HBox class=".sapUiSizeCompact .sapMBtnInner">
+                                    <Button
+                                        icon="sap-icon://arrow-left"
+                                        tooltip="Go Back"
+                                        press="onNavBack"
+                                    />
+                                    <HBox>
+                                        <ImageContent
+                                            src="test-resources/sap/m/demokit/sample/ImageContent/images/ProfileImage_LargeGenTile.png"
+                                            description="Helen"
+                                            press="press"
+                                            class=".sapMImageContentImageIcon"
+                                            showNavButton="true"
+                                            navButtonPress="onNavBack"
+                                        />
+                                        <Text text="Helen" />
+                                    </HBox>
+                                </HBox>
+                            </tnt:ToolHeader>
+                            <HBox>
+                                <ImageContent
+                                    src="https://i.pinimg.com/236x/13/d1/80/13d1809cfe0649e11bef1b50e49f3e58.jpg"
+                                />
+                                <Text text="Account" />
+                            </HBox>
+
+                            <HBox>
+                                <ImageContent
+                                    src="https://i.pinimg.com/236x/f9/26/be/f926bef1490ab447798ccd012c2e8040.jpg"
+                                />
+                                <Text text="Avatar" />
+                            </HBox>
+
+                            <HBox>
+                                <ImageContent
+                                    src="https://i.pinimg.com/236x/42/15/7c/42157c817dee5ff304953fbbb5431f3c.jpg"
+                                />
+                                <Text text="Privacy" />
+                            </HBox>
+
+                            <HBox>
+                                <ImageContent
+                                    src="https://i.pinimg.com/236x/84/01/31/8401317801c98fbf7c46d266eccd44d0.jpg"
+                                />
+                                <Text text="Chats" />
+                            </HBox>
+
+                            <HBox>
+                                <ImageContent
+                                    src="https://i.pinimg.com/236x/3e/4a/08/3e4a08581054163c47fdf2d564fb2c65.jpg"
+                                />
+                                <Text text="Notif" />
+                            </HBox>
+
+                            <HBox>
+                                <ImageContent
+                                    src="https://i.pinimg.com/236x/03/86/65/038665a760129fae6985c409f3ac2651.jpg"
+                                />
+                                <Text text="Lang" />
+                            </HBox>
+
+                            <HBox>
+                                <ImageContent
+                                    src="https://i.pinimg.com/236x/28/11/b5/2811b5b26ba3ecbb4950f1f0ce0a913e.jpg"
+                                />
+                                <Text text="Help" />
+                            </HBox>
+                        </VBox>
+                    </f:content>
+                </f:SimpleForm>
+            </FlexBox>
+        </content>
+    </Page>
+</mvc:View>

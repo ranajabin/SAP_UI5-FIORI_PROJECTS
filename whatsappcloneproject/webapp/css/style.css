@@ -1,0 +1,56 @@
+/* Enter your custom styles here */
+
+.sapMSFI {
+    color: #066e35;
+    font-family: "72","72full",Arial,Helvetica,sans-serif;
+    font-size: 0.875rem;
+    background: transparent;
+    width: 100%;
+    height: 2.125rem;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    text-indent: 0.250rem;
+    vertical-align: top;
+    text-overflow: ellipsis;
+}
+
+.sapMITBTextOnly .sapMITBFilterDefault.sapMITBSelected>.sapMITBText {
+    color: #cec441;
+}
+
+.sapTntToolHeader.sapMTB.sapMTBStandard {
+   background-color: rgb(1, 126, 1); 
+    color: green;    
+}
+
+.sapUiSizeCompact .sapMBtnInner {
+    height: 1.625rem;
+    min-width: 6.5rem;
+}  
+
+.sapMImageContentImageIcon {
+    display: block;
+    position: initial;
+    right: 0;
+    bottom: 0;
+    max-height: 3.5rem;
+}
+
+.sapUiSizeCompact .sapMBtnInner {
+    height: 1.625rem;
+    min-width: 3.5rem;
+}
+
+.sapUiFormResGrid>div {
+    padding: 1rem 0.75rem;
+    box-sizing: inherit;
+    height : 50rem;
+}
+
+.sapMITBContent {
+    border-bottom: 0.0625rem solid #d9d9d9;
+    /* background-image: "https://logos.flamingtext.com/City-Logos/Rana-Water-Logo.png"; */
+    height : 40rem;
+}

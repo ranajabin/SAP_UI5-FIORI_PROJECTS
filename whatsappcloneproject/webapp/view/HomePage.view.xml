@@ -1,0 +1,291 @@
+<mvc:View
+    controllerName="whatsapp.whatsappcloneproject.controller.HomePage"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:tnt="sap.tnt"
+    xmlns:fiori="sap.ui.webc.fiori"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+        showHeader="false"
+    >
+        <content>
+            <FlexBox
+                alignItems="Center"
+                justifyContent="Center"
+            >
+                <f:SimpleForm
+                    editable="true"
+                    layout="ResponsiveGridLayout"
+                    emptySpanL="10"
+                    emptySpanM="10"
+                    class=".sapUiFormResLayout .sapUiFormBackgrTranslucent>div"
+                >
+                    <f:content>
+                        <VBox alignItems="Center">
+                            <tnt:ToolHeader
+                                id="th"
+                                width="390px"
+                                class=".sapTntToolHeader .sapMTB "
+                            >
+                                <HBox class=".sapUiSizeCompact .sapMBtnInner">
+                                    <Label
+                                        text="Whatsapp"
+                                        textAlign="Begin"
+                                        width="100px"
+                                        design = "Bold"
+                                    />
+                                    <Button icon="sap-icon://camera" />
+                                    <VBox>
+                                        <SearchField
+                                            id="searchField"
+                                            width="160px"
+                                            placeholder="Search for..."
+                                            enableSuggestions="true"
+                                            search=".onSearch"
+                                            suggest=".onSuggest"
+                                        />
+                                    </VBox>
+                                    <!-- <Button icon="sap-icon://menu" /> -->
+                                    <MenuButton
+                                        text=""
+                                        icon="sap-icon://menu"
+                                    >
+                                        <menu>
+                                            <Menu>
+                                                <MenuItem
+                                                    text="New group"
+                                                    icon=""
+                                                >
+                                                    <customData>
+                                                        <core:CustomData
+                                                            key="target"
+                                                            value="p1"
+                                                        />
+                                                    </customData>
+                                                </MenuItem>
+                                                <MenuItem
+                                                    text="New broadcast"
+                                                />
+                                                <MenuItem
+                                                    text="Linked devices"
+                                                />
+                                                <MenuItem
+                                                    text="Starred messages"
+                                                />
+                                                <MenuItem text="Payments" />
+                                                <MenuItem
+                                                    text="Settings"
+                                                    press="onPress"
+                                                />
+                                            </Menu>
+                                        </menu>
+                                    </MenuButton>
+                                </HBox>
+                            </tnt:ToolHeader>
+                            <IconTabBar headerMode="Inline" expandable="false">
+                                <items>
+                                    <!--	<IconTabFilter key="camera" text="camera" icon="sap-icon://camera"/>  -->
+                                    <IconTabFilter
+                                        key="community"
+                                        text="community"
+                                    >
+                                        <Text
+                                            text="Start Your Community here"
+                                        />
+                                    </IconTabFilter>
+                                    <IconTabFilter
+                                        key="chats"
+                                        text="Chats"
+                                        count="3"
+                                    >
+                                        <Text text="chats Area" />
+                                        <!-- <ObjectHeader
+		icon="test-resources/sap/m/images/Woman_04.png"
+		iconDensityAware="false"
+		iconAlt="Denise Smith"        
+		imageShape="Circle"
+		responsive="true"
+		title="Denise Smith"
+		intro="Senior Developer"/> -->
+                                        <HBox>
+                                            <ImageContent
+                                                src="test-resources/sap/m/demokit/sample/ImageContent/images/ProfileImage_LargeGenTile.png"
+                                                description="Helen"
+                                                press="press"
+                                            />
+                                            <!-- <Text text="Helen" /> -->
+                                            <Label text = "Hi.." />
+                                        </HBox>
+                                        <HBox>
+                                            <ImageContent
+                                                src="https://www.pngitem.com/pimgs/m/627-6275754_chad-profile-pic-profile-photo-circle-png-transparent.png "
+                                                description="Rocky"
+                                                press="press"
+                                                class=".sapMImageContentImageIcon"
+                                            />
+                                            <Text text="Rocky" />
+                                        </HBox>
+                                        <HBox>
+                                            <ImageContent
+                                                src="https://i.pinimg.com/236x/19/95/a5/1995a5b77a960dd14fcc49d85a080dc6.jpg"
+                                                description="B.R.Ambedkar"
+                                                press="press"
+                                                
+                                            />
+                                            <Text text="B.R.Ambedkar" />
+                                        </HBox>
+                                        <HBox>
+                                            <ImageContent
+                                                src="https://cdn.statically.io/img/www.mockofun.com/f=auto//wp-content/uploads/2019/12/circle-profile-pic.jpg "
+                                                description="Sofia"
+                                                press="press"
+                                            />
+                                            <Text text="Sofia" />
+                                        </HBox>
+                                        <HBox>
+                                            <ImageContent
+                                                src="https://png.pngitem.com/pimgs/s/140-1404341_young-female-student-using-laptop-girl-hd-png.png"
+                                                description="Emma"
+                                                press="press"
+                                            />
+                                            <Text text="Emma" />
+                                        </HBox>
+                                        <HBox>
+                                            <ImageContent
+                                                src="https://png.pngitem.com/pimgs/s/591-5917111_women-drinking-water-girl-hd-png-download.png"
+                                                description="Mia"
+                                                press="press"
+                                            />
+                                            <Text text="Mia" />
+                                        </HBox>
+                                        <HBox>
+                                            <ImageContent
+                                                src="https://png.pngitem.com/pimgs/s/140-1404299_credit-card-hd-png-download.png"
+                                                description="Amelia"
+                                                press="press"
+                                            />
+                                            <Text text="Amelia" />
+                                        </HBox>
+                                        <HBox>
+                                            <ImageContent
+                                                src="https://p.kindpng.com/picc/s/394-3947019_round-profile-picture-png-transparent-png.png"
+                                                description="Evelyn"
+                                                press="press"
+                                            />
+                                            <Text text="Evelyn" />
+                                        </HBox>
+                                        <HBox
+                                            alignContent="End"
+                                            alignItems="End"
+                                        >
+                                            <Button
+                                                icon="https://i.pinimg.com/236x/e9/78/13/e97813451fd0431dd066be2ac6de04a4.jpg"
+                                                width="20px"
+                                                class=".sapUiSizeCompact .sapMBtnInner"
+                                            />
+                                        </HBox>
+                                    </IconTabFilter>
+                                    <IconTabFilter
+                                        key="status"
+                                        text="Status"
+                                        count="."
+                                    >
+                                        <Text text="Recent Status" />
+                                        <HBox>
+                                            <ImageContent
+                                                src="https://i.pinimg.com/originals/f9/24/dd/f924dda2694340b58a3355b9b4a57f63.jpg"
+                                                description="Rani"
+                                                press="press"
+                                            >
+                                                <layoutData>
+                                                    <l:GridData
+                                                        span="L2 M1 S1"
+                                                        linebreakL="false"
+                                                        linebreakM="false"
+                                                        linebreakS="false"
+                                                    />
+                                                </layoutData>
+                                            </ImageContent>
+                                            <Text text="Rani" />
+                                        </HBox>
+                                        <Label
+                                            text="Viewed Status"
+                                            design="Bold"
+                                        >
+                                            <layoutData>
+                                                <l:GridData span="L2 M4 S4" />
+                                            </layoutData>
+                                        </Label>
+                                        <HBox>
+                                            <ImageContent
+                                                src="https://i.pinimg.com/550x/91/58/49/91584912012624870f61d85de62b9262.jpg "
+                                                description="Sarika"
+                                                press="press"
+                                            />
+                                            <Text text="Sarika" />
+                                        </HBox>
+                                        <HBox>
+                                            <ImageContent
+                                                src="https://www.imagesplatform.com/imgs/free-circle-png.jpg"
+                                                description="Uma"
+                                                press="press"
+                                            >
+                                                <layoutData>
+                                                    <l:GridData
+                                                        span="L2 M1 S1"
+                                                        linebreakL="false"
+                                                        linebreakM="false"
+                                                        linebreakS="false"
+                                                    />
+                                                </layoutData>
+                                            </ImageContent>
+                                            <Text text="Uma" />
+                                        </HBox>
+                                        <Label
+                                            text="Archieved Status"
+                                            design="Bold"
+                                        >
+                                            <layoutData>
+                                                <l:GridData span="L2 M4 S4" />
+                                            </layoutData>
+                                        </Label>
+                                    </IconTabFilter>
+                                    <IconTabFilter
+                                        key="calls"
+                                        text="Calls"
+                                    >
+                                        <Text text="Recent Calls" />
+                                        <ImageContent src="sap-icon://call" />
+                                        <ImageContent
+                                            src="sap-icon://incoming-call"
+                                        />
+                                        <ImageContent
+                                            src="sap-icon://outgoing-call"
+                                        />
+                                        <ImageContent src="sap-icon://call" />
+                                    </IconTabFilter>
+                                </items>
+                            </IconTabBar>
+                            <!--          <fiori:footnotes>
+				<Label text="Archived Chats" />
+			</fiori:footnotes>  -->
+                        </VBox>
+                    </f:content>
+                </f:SimpleForm>
+            </FlexBox>
+        </content>
+        <footer>
+            <Bar>
+                <contentRight>
+                    <Button icon="sap-icon://add-photo" />
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>
