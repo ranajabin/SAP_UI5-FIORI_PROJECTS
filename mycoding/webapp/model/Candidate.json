@@ -1,0 +1,28 @@
+{
+        "candidatedetails" : [
+        {
+            "packagename" : "AA",
+            "dbscheck"    : "None11",
+            "creditcheck" : "",
+            "righttoworkcheck" : "",
+            "workhistorycheck" : "1"
+        },
+
+        {
+            "packagename" : "BB",
+            "dbscheck"    : "None1",
+            "creditcheck" : "",
+            "righttoworkcheck" : "",
+            "workhistorycheck" : "2"
+        },
+
+        {
+            "packagename" : "CC",
+            "dbscheck"    : "None2",
+            "creditcheck" : "",
+            "righttoworkcheck" : "",
+            "workhistorycheck" : "5"
+
+        }
+    ]
+}

@@ -1,0 +1,263 @@
+<mvc:View
+    controllerName="Coding.mycoding.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <VBox>
+                <MessageStrip
+                    text="Use this slider to shrink the toolbars and observe their behavior. Note: the icon buttons display text only when in the overflow area."
+                    showIcon="true"
+                />
+
+                <Slider
+                    value="100"
+                    liveChange="onSliderMoved"
+                />
+            </VBox>
+
+            <Label />
+            <Table
+                backgroundDesign="Translucent"
+                alternateRowColors="true"
+                id="table1"
+                width="100%"
+                visible="true"
+                inset="false"
+                contextualWidth="inherit"
+                items="{Table1>/candidatedetails}"
+            >
+                <headerToolbar>
+                    <OverflowToolbar id="otbSubheader">
+                        <!-- <Toolbar> -->
+                        <Title text="" />
+                        <ToolbarSpacer />
+                        <SearchField
+                            width="20%"
+                            search="onFilterSearch"
+                        />
+                        <Button
+                            text="Create Package"
+                            type="Emphasized"
+                            visible="true"
+                            id="_idbtn"
+                            press="onLoadDialog"
+                        />
+                        <!-- </Toolbar> -->
+                    </OverflowToolbar>
+                </headerToolbar>
+
+                <columns>
+                    <Column
+                        width="09em"
+                        minScreenWidth="Tablet"
+                    >
+                        <Text text="Package Name" />
+                    </Column>
+
+                    <Column
+                        width="09em"
+                        minScreenWidth="Tablet"
+                    >
+                        <Text text="DBS Check" />
+                    </Column>
+
+                    <Column
+                        width="09em"
+                        minScreenWidth="Tablet"
+                    >
+                        <Text text="Credit/Financial Check" />
+                    </Column>
+
+                    <Column
+                        width="09em"
+                        minScreenWidth="Tablet"
+                    >
+                        <Text text="Right to Work Check" />
+                    </Column>
+
+                    <Column
+                        width="09em"
+                        minScreenWidth="Tablet"
+                    >
+                        <Text text="Work History Check" />
+                    </Column>
+
+                    <Column
+                        width="09em"
+                        minScreenWidth="Tablet"
+                    >
+                        <Text text="Action" />
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <!-- <Text text="New Sp 02" />
+                            <ComboBox
+                                value="Enhanced"
+                                width="50%"
+                            />
+                            <CheckBox text="" />
+                            <CheckBox text="" />
+                            <StepInput
+                                min="0"
+                                max="9"
+                                value="0"
+                                width="12rem"
+                            /> -->
+
+                            <Text
+                                text="{Table1>packagename}"
+                                id="_idpkg1"
+                            />
+
+                           	<!-- <Select
+					forceSelection="false"
+                    selectedKey="{Table1>dbscheck}"
+					items="{
+						path: 'Table1>/candidatedetails'
+					}">
+					<core:Item key="{Table1>dbscheck}" text="{Table1>dbscheck}" />
+				</Select> -->
+
+                            <ComboBox
+                                value="{Table1>dbscheck}"
+                                width="50%"
+                                id="_iddbs1"
+                            >
+                               <core:Item text="None" />
+                                 <core:Item text="None1" />
+                                <core:Item text="None2" />
+                            </ComboBox>
+
+                             <!-- <ComboBox
+                                items="{Table1>/candidatedetails}"
+                                selectedKey="{Table1>/key2}"
+                                width="50%"
+                                id="_iddbs1"
+                            >
+                                <core:Item
+                                key = "{Table1>idkey}"
+                                    text="{Table1>dbscheck}"
+                                /> 
+                            </ComboBox> -->
+
+                             <!-- <ComboBox
+                                items="{Table1>/candidatedetails}"
+                                width="50%"
+                                
+                            >
+                                 <core:Item
+                                    text="{Table1>dbscheck}"
+                                    id="_iddbs1"
+                                /> 
+                            </ComboBox> -->
+
+                            <!-- <Select selectedKey = "{Table1>dbscheck}"> -->
+                                <!-- <core:Item
+                                    text="{Table1>dbscheck}"
+                                    id="_iddbs1"
+                                /> -->
+                           <!-- <core:Item text="None" />
+                                <core:Item text="None1" />
+                                <core:Item text="None2" />
+                             </Select> -->
+                            <!-- <CheckBox text="" id = "_idcredit1" selected="{Table1>financialcheck == true ? true : false}" select="onCheckBoxSelect"  /> -->
+                            <CheckBox
+                                text=""
+                                id="_idcredit1"
+                                selected="false"
+                                
+                            />
+
+                            <CheckBox
+                                text=""
+                                id="_idright1"
+                                selected="false"
+                            />
+
+                            <StepInput
+                                min="0"
+                                max="9"
+                                value="{Table1>workhistorycheck}"
+                                width="12rem"
+                                id="_idhistory1"
+                                editable="true"
+                                textAlign="Center"
+                            />
+
+                            <HBox>
+                                <!-- <Button icon="sap-icon://edit" press="handleEditStatement" /> -->
+                                <Button
+                                    icon="sap-icon://delete"
+                                    press="handleDeleteStatement"
+                                />
+                            </HBox>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+
+        <footer>
+            <OverflowToolbar id="otbFooter">
+                <ToolbarSpacer />
+                <Button
+                    type="Accept"
+                    text="Accept"
+                >
+                    <layoutData>
+                        <OverflowToolbarLayoutData priority="NeverOverflow" />
+                    </layoutData>
+                </Button>
+                <Button
+                    type="Reject"
+                    text="Reject"
+                >
+                    <layoutData>
+                        <OverflowToolbarLayoutData priority="NeverOverflow" />
+                    </layoutData>
+                </Button>
+                <OverflowToolbarButton
+                    tooltip="Delete"
+                    text="Delete"
+                    icon="sap-icon://delete"
+                />
+                <OverflowToolbarButton
+                    tooltip="Edit"
+                    text="Edit"
+                    icon="sap-icon://edit"
+                />
+                <OverflowToolbarButton
+                    tooltip="Add"
+                    text="Add"
+                    icon="sap-icon://add"
+                />
+                <OverflowToolbarButton
+                    tooltip="Favorite"
+                    text="Favorite"
+                    icon="sap-icon://favorite"
+                />
+                <OverflowToolbarButton
+                    tooltip="Flag"
+                    text="Flag"
+                    icon="sap-icon://flag"
+                />
+                <OverflowToolbarToggleButton
+                    tooltip="Toggle"
+                    text="Toggle"
+                    icon="sap-icon://touch"
+                    press="onTogglePress"
+                />
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>
