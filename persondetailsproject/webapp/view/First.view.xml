@@ -1,0 +1,39 @@
+<mvc:View
+    controllerName="person.persondetailsproject.controller.First"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true"
+>
+    <Page
+        id="page"
+        title="{i18n>title1}"
+        titleAlignment="Center"
+        class="bodyy"
+    >
+        <!-- <headerContent>
+            <Button
+                icon="sap-icon://navigation-right-arrow"
+                tooltip="Next Page"
+                press="onNavNext"
+            />
+        </headerContent> -->
+        <content>
+            <GenericTile
+                class="sapUiTinyMarginBegin sapUiTinyMarginTop"
+                backgroundImage="test-resources/sap/m/images/NewsImage1.png"
+                frameType="OneByOne"
+                press="onPress"
+            >
+                <TileContent
+                    footer="Details Available"
+                    frameType="OneByOne"
+                >
+                    <NewsContent
+                        contentText="Employee Profile Details"
+                        subheader="SAP "
+                    />
+                </TileContent>
+            </GenericTile>
+        </content>
+    </Page>
+</mvc:View>

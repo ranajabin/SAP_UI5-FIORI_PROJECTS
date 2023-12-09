@@ -1,0 +1,120 @@
+/* Enter your custom styles here */
+
+.sapMFlexBoxAlignContentCenter {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    align-content: center;
+    /* background-color: beige; */
+}
+
+.sapUiForm>.sapUiFormResLayout>.sapUiRFL .sapUiRFLRow:last-child>.sapUiRFLContainer.sapUiRFLFullLength>.sapUiRFLContainerContent>.sapUiRLElement>.sapUiRFLRow:last-child>.sapUiRFLFullLength:last-child {
+    background-color: beige;
+    /* padding-top: 30px; */
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.sapUiSizeCompact .sapUiFormEdit .sapMText {
+    color: violet;
+    font-weight: bold;
+    font-size: 25px;
+    min-height: 1rem;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+}
+
+/* bdi {
+    color: rgb(244, 248, 6);
+    font-size: 18px;
+    unicode-bidi: isolate;
+} */
+
+ /* Login page Button */
+.myCustomButton {
+    color: rgb(232, 248, 6);
+    font-family: Arial;
+    font-size: 13px;
+    background-color: Orange;
+    border-radius: 10rem;
+    width: 100px;
+    height: 100px;
+}
+
+/* Label CSS */
+.sapMLabel {
+    color: #02a85b;
+    font-family: Arial;
+    font-size: 18px;
+    font-family: "72", "72full", Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    display: inline-block;
+    white-space: nowrap;
+    cursor: text;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.onvbox1 {
+    margin-top: 80px;
+}
+
+/* Login page css */
+.body1 {
+    /* background-color: rgb(156, 109, 0); */
+    background-image: url("https://i.pinimg.com/236x/17/4d/28/174d288190ea3fac1ceb7b569bbec177.jpg");
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Personal details page css */
+.body2 {
+    background-color: rgb(252, 247, 185);
+}
+
+/* CSS for first tiles view */
+.bodyy {
+    background-color: rgb(163, 113, 70);
+    background-image: url("https://i.pinimg.com/236x/93/77/6e/93776e2dfff553e27acecd5fca5a31eb.jpg");
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.link1 {
+    font-size: 18px;
+}
+
+.sapUiFormM:not(.sapUiFormEdit)>.sapUiFormResGrid>div:not(.sapMTB) {
+    padding-bottom: 0.75rem;
+    background-color: rgb(238, 236, 236);
+}
+
+.sapMListHdrText {
+
+    font-size: 1.25rem;
+    color: #1d2d3e;
+    background-color: rgb(226, 226, 226);
+    border-bottom: 1px solid #dddedf;
+}
+
+.sapUiForm .sapUiFormTitle {
+    border-width: 3px;
+    border-color: #dde0e2;
+    background-color: rgb(235, 235, 235);
+    height: 2.75rem;
+    line-height: 2.75rem;
+}
+
+/* colorset CSS  */
+
+.customCellImageBackground {
+    color: #fff;
+    background-size: 100% auto;
+    background-position: 0 80%;
+}
+
+.customCellImageBackground .sapUiBlockCellContent,
+.customCellImageBackground .sapUiBlockCellContent .sapMText {
+    color: #fff;
+}

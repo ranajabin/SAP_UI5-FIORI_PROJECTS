@@ -1,0 +1,945 @@
+<mvc:View
+    controllerName="person.persondetailsproject.controller.PersonalInformation"
+    xmlns="sap.uxap"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:c="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    height="100%"
+>
+    <m:Page
+        title=" {18n>title3}"
+        enableScrolling="true"
+        class="sapUiResponsivePadding--header sapUiResponsivePadding--footer body2"
+        titleAlignment="Center"
+        showNavButton="true"
+        navButtonPress="onNavBack"
+        id="page1"
+    >
+        <m:headerContent>
+            <!-- <m:HBox
+			alignItems="Center"
+			class="sapUiContentPadding"> -->
+            <!-- <m:Label text= "My Profile" textAlign="Center" /> -->
+            <m:Label
+                text="Color set for all cells"
+                showColon="true"
+                class="sapUiTinyMarginEnd"
+            />
+            <m:Select selectedKey="{/colorSet}">
+                <c:Item
+                    key="ColorSet1"
+                    text="ColorSet1"
+                />
+                <c:Item
+                    key="ColorSet2"
+                    text="ColorSet2"
+                />
+                <c:Item
+                    key="ColorSet3"
+                    text="ColorSet3"
+                />
+                <c:Item
+                    key="ColorSet4"
+                    text="ColorSet4"
+                />
+                <c:Item
+                    key="ColorSet5"
+                    text="ColorSet5"
+                />
+                <c:Item
+                    key="ColorSet6"
+                    text="ColorSet6"
+                />
+                <c:Item
+                    key="ColorSet7"
+                    text="ColorSet7"
+                />
+                <c:Item
+                    key="ColorSet8"
+                    text="ColorSet8"
+                />
+                <c:Item
+                    key="ColorSet9"
+                    text="ColorSet9"
+                />
+                <c:Item
+                    key="ColorSet10"
+                    text="ColorSet10"
+                />
+                <c:Item
+                    key="ColorSet11"
+                    text="ColorSet11 (transparent in SAP Horizon theme)"
+                />
+            </m:Select>
+            <!-- </m:HBox> -->
+            <m:Button
+                icon="sap-icon://log"
+                tooltip="Logout"
+                text="{i18n>logout}"
+                press="onPressLog"
+            />
+            <!-- <m:Button
+                tooltip="Next"
+                text="Goto First"
+                press="onPressNext"
+            /> -->
+        </m:headerContent>
+
+        <m:content>
+            <m:VBox fitContainer="true">
+                <m:ObjectHeader
+                    icon="{Emp1>/0/Icon}"
+                    iconDensityAware="false"
+                    iconAlt="{Emp1>/0/FirstName} {Emp1>/0/MiddleName} {Emp1>/0/LastName} "
+                    imageShape="Circle"
+                    responsive="false"
+                    title="{Emp1>/0/FirstName} {Emp1>/0/MiddleName} {Emp1>/0/LastName} "
+                    intro="Senior Developer"
+                    class="sapUiResponsivePadding--header"
+                >
+                    <m:ObjectAttribute
+                        title="{i18n>email}"
+                        text="{Emp1>/0/Email}"
+                        active="true"
+                        press="handleEmailPress"
+                    />
+                    <m:ObjectAttribute
+                        title="{i18n>phone}"
+                        text="{Emp1>/0/DeskPhone}"
+                        active="true"
+                        press="handleTelPress"
+                    />
+                    <m:ObjectAttribute
+                        title="{i18n>functional}"
+                        text="{Emp1>/0/FunctionalArea}"
+                    />
+                    <m:ObjectAttribute
+                        title="{i18n>location}"
+                        text="{Emp1>/0/AddressLine1}"
+                    />
+                    <m:ObjectAttribute
+                        title="{i18n>department}"
+                        text="{Emp1>/0/Department}"
+                    />
+                </m:ObjectHeader>
+                <m:Toolbar>
+                    <m:ToolbarSpacer />
+                    <m:Button
+                        text="Check Your Calender"
+                        icon="sap-icon://calendar"
+                        press="onLoadCalDialog"
+                    />
+                </m:Toolbar>
+                <ObjectPageLayout
+                    id="ObjectPageLayout"
+                    upperCaseAnchorBar="false"
+                    sections=""
+                >
+                    <headerTitle>
+                        <ObjectPageDynamicHeaderTitle>
+                            <heading>
+                                <m:Title text="Details:" />
+                            </heading>
+                        </ObjectPageDynamicHeaderTitle>
+                    </headerTitle>
+
+                    <sections>
+                        <ObjectPageSection title="Personal Information">
+                            <subSections>
+                                <ObjectPageSubSection>
+                                    <!-- <actions>
+							<m:Button text="To Detail" press="toDetail"/>
+						</actions> -->
+                                    <blocks>
+                                        <l:BlockLayout id="blockLayout">
+                                            <l:BlockLayoutRow>
+                                                <l:BlockLayoutCell
+                                                    backgroundColorSet="{/colorSet}"
+                                                    backgroundColorShade="ShadeC"
+                                                >
+                                                    <form:SimpleForm
+                                                        id="SimpleFormDisplay480"
+                                                        maxContainerCols="2"
+                                                        editable="false"
+                                                        layout="ResponsiveGridLayout"
+                                                        title="Personal Info: "
+                                                        labelSpanL="4"
+                                                        labelSpanM="4"
+                                                        emptySpanL="0"
+                                                        emptySpanM="0"
+                                                        columnsL="2"
+                                                        columnsM="2"
+                                                    >
+                                                        <form:content>
+                                                            <c:Title text="" />
+                                                            <m:Label
+                                                                text="{i18n>firstname} "
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/FirstName}"
+                                                            />
+
+                                                            <m:Label
+                                                                text="{i18n>middlename} "
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/MiddleName}"
+                                                            />
+
+                                                            <m:Label
+                                                                text="{i18n>lastname}"
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/LastName}"
+                                                            />
+
+                                                            <m:Label
+                                                                text="{i18n>nickname} "
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/NickName}"
+                                                            />
+
+                                                            <m:Label
+                                                                text=" {i18n>maritalstatus}"
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/MaritalStatus}"
+                                                            />
+
+                                                            <m:Label
+                                                                text="{i18n>dateofbirth}"
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/DateofBirth}"
+                                                            />
+                                                        </form:content>
+                                                        <form:layoutData>
+                                                            <m:FlexItemData
+                                                                shrinkFactor="0"
+                                                                backgroundDesign="Solid"
+                                                                styleClass="sapContrastPlus"
+                                                            />
+                                                        </form:layoutData>
+
+                                                        <m:OverflowToolbar>
+                                                            <m:ToolbarSpacer />
+                                                            <m:Button
+                                                                text=" Edit"
+                                                                icon="sap-icon://edit"
+                                                                press="onLoadDialog"
+                                                            />
+                                                        </m:OverflowToolbar>
+                                                    </form:SimpleForm>
+                                                </l:BlockLayoutCell>
+                                            </l:BlockLayoutRow>
+                                        </l:BlockLayout>
+                                    </blocks>
+                                </ObjectPageSubSection>
+                            </subSections>
+                        </ObjectPageSection>
+                    </sections>
+
+                    <sections>
+                        <ObjectPageSection title="Address">
+                            <subSections>
+                                <ObjectPageSubSection>
+                                    <blocks>
+                                        <l:BlockLayout id="blockLayout1">
+                                            <l:BlockLayoutRow>
+                                                <l:BlockLayoutCell
+                                                    backgroundColorSet="{/colorSet}"
+                                                    backgroundColorShade="ShadeC"
+                                                >
+                                                    <m:OverflowToolbar>
+                                                        <m:ToolbarSpacer />
+                                                        <m:Button
+                                                            id="_idEdit"
+                                                            text="Edit"
+                                                            icon="sap-icon://edit"
+                                                            press="onPressEditAddress"
+                                                        />
+                                                    </m:OverflowToolbar>
+                                                    <form:SimpleForm
+                                                        id="_idform1"
+                                                        maxContainerCols="2"
+                                                        editable="false"
+                                                        layout="ResponsiveGridLayout"
+                                                        title="{i18n>address}: "
+                                                        labelSpanL="4"
+                                                        labelSpanM="4"
+                                                        emptySpanL="0"
+                                                        emptySpanM="0"
+                                                        columnsL="2"
+                                                        columnsM="2"
+                                                        visible="true"
+                                                    >
+                                                        <form:content>
+                                                            <c:Title
+                                                                text="{i18n>permanentresidence}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>address1}"
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/AddressLine1}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>address2}"
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/AddressLine2}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>city} "
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/City}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>state} "
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/State}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>zipcode} "
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/ZipCode}"
+                                                            />
+
+                                                            <c:Title
+                                                                text="{i18n>mailing}"
+                                                            />
+
+                                                            <m:Label
+                                                                text="{i18n>address1}"
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/AddressLine1}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>address2}"
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/AddressLine2}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>city}"
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/City}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>state}"
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/State}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>zipcode}"
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/ZipCode}"
+                                                            />
+                                                        </form:content>
+                                                    </form:SimpleForm>
+
+                                                    <form:SimpleForm
+                                                        id="_idform2"
+                                                        maxContainerCols="2"
+                                                        editable="false"
+                                                        layout="ResponsiveGridLayout"
+                                                        title="{i18n>address}: "
+                                                        labelSpanL="4"
+                                                        labelSpanM="4"
+                                                        emptySpanL="0"
+                                                        emptySpanM="0"
+                                                        columnsL="2"
+                                                        columnsM="2"
+                                                        visible="false"
+                                                    >
+                                                        <form:content>
+                                                            <c:Title
+                                                                text="{i18n>permanentresidence}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>address1}"
+                                                            />
+                                                            <m:Input
+                                                                value="{Emp1>/0/AddressLine1}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>address2}"
+                                                            />
+                                                            <m:Input
+                                                                value="{Emp1>/0/AddressLine2}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>city} "
+                                                            />
+                                                            <m:Input
+                                                                value="{Emp1>/0/City}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>state} "
+                                                            />
+                                                            <m:Input
+                                                                value="{Emp1>/0/State}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>zipcode} "
+                                                            />
+                                                            <m:Input
+                                                                value="{Emp1>/0/ZipCode}"
+                                                            />
+
+                                                            <c:Title
+                                                                text="{i18n>mailing}"
+                                                            />
+
+                                                            <m:Label
+                                                                text="{i18n>address1}"
+                                                            />
+                                                            <m:Input
+                                                                value="{Emp1>/0/AddressLine1}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>address2}"
+                                                            />
+                                                            <m:Input
+                                                                value="{Emp1>/0/AddressLine2}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>city}"
+                                                            />
+                                                            <m:Input
+                                                                value="{Emp1>/0/City}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>state}"
+                                                            />
+                                                            <m:Input
+                                                                value="{Emp1>/0/State}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>zipcode}"
+                                                            />
+                                                            <m:Input
+                                                                value="{Emp1>/0/ZipCode}"
+                                                            />
+                                                        </form:content>
+                                                    </form:SimpleForm>
+                                                </l:BlockLayoutCell>
+                                            </l:BlockLayoutRow>
+                                        </l:BlockLayout>
+                                    </blocks>
+                                </ObjectPageSubSection>
+                            </subSections>
+                        </ObjectPageSection>
+                    </sections>
+
+                    <sections>
+                        <ObjectPageSection title="Dependent and Beneficiary">
+                            <subSections>
+                                <ObjectPageSubSection>
+                                    <blocks>
+                                        <l:BlockLayout id="blockLayout2">
+                                            <l:BlockLayoutRow>
+                                                <l:BlockLayoutCell
+                                                    backgroundColorSet="{/colorSet}"
+                                                    backgroundColorShade="ShadeC"
+                                                >
+                                                    <m:Table
+                                                        backgroundDesign="Translucent"
+                                                        headerText="{i18n>depntandbeneficiary}:"
+                                                        alternateRowColors="true"
+                                                        id="table1"
+                                                        items="{
+			path: 'dept>/Deptandbeneficiary'
+			
+		}"
+                                                        width="100%"
+                                                        visible="true"
+                                                        inset="true"
+                                                        contextualWidth="inherit"
+                                                    >
+                                                        <m:headerToolbar>
+                                                            <m:Toolbar>
+                                                                <!-- <m:Title text="Dependentandbeneficiary" /> -->
+                                                                <m:ToolbarSpacer
+                                                                />
+                                                                <m:SearchField
+                                                                    width="20%"
+                                                                    search="onFilterSearch"
+                                                                />
+                                                                <m:Button
+                                                                    text=""
+                                                                    icon="sap-icon://add"
+                                                                    press="onLoadAddDialog"
+                                                                />
+                                                            </m:Toolbar>
+                                                        </m:headerToolbar>
+                                                        <m:columns>
+                                                            <m:Column
+                                                                width="12em"
+                                                                minScreenWidth="Tablet"
+                                                            >
+                                                                <m:Text
+                                                                    text="{i18n>name}"
+                                                                />
+                                                            </m:Column>
+
+                                                            <m:Column
+                                                                width="12em"
+                                                                minScreenWidth="Tablet"
+                                                            >
+                                                                <m:Text
+                                                                    text="{i18n>dob}"
+                                                                />
+                                                            </m:Column>
+
+                                                            <m:Column
+                                                                width="12em"
+                                                                minScreenWidth="Tablet"
+                                                            >
+                                                                <m:Text
+                                                                    text="{i18n>Relationship}"
+                                                                />
+                                                            </m:Column>
+
+                                                            <m:Column
+                                                                width="12em"
+                                                                minScreenWidth="Tablet"
+                                                            >
+                                                                <m:Text
+                                                                    text="{i18n>mobile}"
+                                                                />
+                                                            </m:Column>
+
+                                                            <m:Column
+                                                                width="12em"
+                                                                minScreenWidth="Tablet"
+                                                            >
+                                                                <m:Text
+                                                                    text="{i18n>address}"
+                                                                />
+                                                            </m:Column>
+
+                                                            <m:Column
+                                                                width="12em"
+                                                                minScreenWidth="Tablet"
+                                                            >
+                                                                <m:Text
+                                                                    text="{i18n>zipcode}"
+                                                                />
+                                                            </m:Column>
+
+                                                            <m:Column
+                                                                width="12em"
+                                                                minScreenWidth="Tablet"
+                                                            >
+                                                                <m:Text
+                                                                    text="{i18n>action}"
+                                                                />
+                                                            </m:Column>
+                                                        </m:columns>
+
+                                                        <m:items>
+                                                            <m:ColumnListItem>
+                                                                <m:cells>
+                                                                    <m:Text
+                                                                        text="{dept>FirstName}"
+                                                                    />
+                                                                    <m:Text
+                                                                        text="{dept>DateofBirth}"
+                                                                    />
+                                                                    <m:Text
+                                                                        text="{dept>Relationship}"
+                                                                    />
+                                                                    <m:Text
+                                                                        text="{dept>Mobile}"
+                                                                    />
+                                                                    <m:Text
+                                                                        text="{dept>AddressLine1}"
+                                                                    />
+                                                                    <m:Text
+                                                                        text="{dept>ZipCode}"
+                                                                    />
+                                                                    <m:Button
+                                                                        icon="sap-icon://delete"
+                                                                        press="handleDeleteStatement"
+                                                                    />
+                                                                </m:cells>
+                                                            </m:ColumnListItem>
+                                                        </m:items>
+                                                    </m:Table>
+                                                </l:BlockLayoutCell>
+                                            </l:BlockLayoutRow>
+                                        </l:BlockLayout>
+                                    </blocks>
+                                </ObjectPageSubSection>
+                            </subSections>
+                        </ObjectPageSection>
+                    </sections>
+
+                    <sections>
+                        <ObjectPageSection title="Withholding Info">
+                            <subSections>
+                                <ObjectPageSubSection>
+                                    <blocks>
+                                        <l:BlockLayout id="blockLayout3">
+                                            <l:BlockLayoutRow>
+                                                <l:BlockLayoutCell
+                                                    backgroundColorSet="{/colorSet}"
+                                                    backgroundColorShade="ShadeC"
+                                                >
+                                                    <form:SimpleForm
+                                                        id="SimpleFormDisplay483"
+                                                        maxContainerCols="2"
+                                                        editable="false"
+                                                        layout="ResponsiveGridLayout"
+                                                        title="{i18n>withholdinginfo}"
+                                                        labelSpanL="4"
+                                                        labelSpanM="4"
+                                                        emptySpanL="0"
+                                                        emptySpanM="0"
+                                                        columnsL="2"
+                                                        columnsM="2"
+                                                    >
+                                                        <form:content>
+                                                            <c:Title text="" />
+                                                            <m:Label
+                                                                text="{i18n>taxauthority} "
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/TaxAuthority}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>name} "
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/FirstName}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>ssn}  "
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/SSN}"
+                                                            />
+                                                            <m:Label
+                                                                text=" {i18n>allowance}"
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/Allowances}"
+                                                            />
+                                                            <c:Title text="" />
+                                                            <m:Label
+                                                                text="{i18n>address} "
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/AddressLine1}"
+                                                            />
+                                                            <m:Label
+                                                                text=" {i18n>exempt}"
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/Exempt}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>additionalwitholding} "
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/AdditionalWithholding}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>fillingstatus} "
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/FillingStatus}"
+                                                            />
+                                                        </form:content>
+                                                    </form:SimpleForm>
+                                                </l:BlockLayoutCell>
+                                            </l:BlockLayoutRow>
+                                        </l:BlockLayout>
+                                    </blocks>
+                                </ObjectPageSubSection>
+                            </subSections>
+                        </ObjectPageSection>
+                    </sections>
+
+                    <sections>
+                        <ObjectPageSection title="Bank Details">
+                            <subSections>
+                                <ObjectPageSubSection>
+                                    <blocks>
+                                        <l:BlockLayout id="blockLayout4">
+                                            <l:BlockLayoutRow>
+                                                <l:BlockLayoutCell
+                                                    backgroundColorSet="{/colorSet}"
+                                                    backgroundColorShade="ShadeC"
+                                                >
+                                                    <m:Table
+                                                        backgroundDesign="Translucent"
+                                                        headerText="{i18n>bankdetails}:"
+                                                        alternateRowColors="true"
+                                                        id="table2"
+                                                        items="{
+			path: 'Emp1>/',
+			sorter: {
+				path: 'Name'
+			}
+		}"
+                                                        width="100%"
+                                                        visible="true"
+                                                        inset="true"
+                                                        contextualWidth="inherit"
+                                                    >
+                                                        <m:headerToolbar>
+                                                            <m:Toolbar
+                                                                class="btncss"
+                                                            >
+                                                                <m:ToolbarSpacer
+                                                                />
+
+                                                                <m:MenuButton
+                                                                    text="Export As"
+                                                                    defaultAction="onDefaultAction"
+                                                                    beforeMenuOpen="onBeforeMenuOpen"
+                                                                >
+                                                                    <m:menu>
+                                                                        <m:Menu
+                                                                            itemSelected="onMenuAction"
+                                                                        >
+                                                                            <m:MenuItem
+                                                                                text="Excel"
+                                                                                icon="sap-icon://excel-attachment"
+                                                                                press="downloadexcel"
+                                                                            />
+                                                                            <m:MenuItem
+                                                                                text="pdf"
+                                                                                icon="sap-icon://pdf-attachment"
+                                                                                press="downloadpdf"
+                                                                            />
+                                                                        </m:Menu>
+                                                                    </m:menu>
+                                                                </m:MenuButton>
+                                                            </m:Toolbar>
+                                                        </m:headerToolbar>
+                                                        <m:columns>
+                                                            <m:Column
+                                                                width="12em"
+                                                                minScreenWidth="Tablet"
+                                                            >
+                                                                <m:Text
+                                                                    text="{i18n>banktype}"
+                                                                />
+                                                            </m:Column>
+
+                                                            <m:Column
+                                                                width="12em"
+                                                                minScreenWidth="Tablet"
+                                                            >
+                                                                <m:Text
+                                                                    text="{i18n>routingnum}"
+                                                                />
+                                                            </m:Column>
+
+                                                            <m:Column
+                                                                width="12em"
+                                                                minScreenWidth="Tablet"
+                                                            >
+                                                                <m:Text
+                                                                    text="{i18n>accountnum}"
+                                                                />
+                                                            </m:Column>
+
+                                                            <m:Column
+                                                                width="12em"
+                                                                minScreenWidth="Tablet"
+                                                            >
+                                                                <m:Text
+                                                                    text="{i18n>amount}"
+                                                                />
+                                                            </m:Column>
+
+                                                            <m:Column
+                                                                width="12em"
+                                                                minScreenWidth="Tablet"
+                                                            >
+                                                                <m:Text
+                                                                    text="{i18n>percent}"
+                                                                />
+                                                            </m:Column>
+                                                        </m:columns>
+
+                                                        <m:items>
+                                                            <m:ColumnListItem>
+                                                                <m:cells>
+                                                                    <m:Text
+                                                                        text="{Emp1>BankType}"
+                                                                    />
+                                                                    <m:Text
+                                                                        text="{Emp1>RoutingNum}"
+                                                                    />
+                                                                    <m:Text
+                                                                        text="{Emp1>AccountNum}"
+                                                                    />
+                                                                    <m:Text
+                                                                        text="{Emp1>Amount}"
+                                                                    />
+                                                                    <m:Text
+                                                                        text="{Emp1>Percent}"
+                                                                    />
+                                                                </m:cells>
+                                                            </m:ColumnListItem>
+                                                        </m:items>
+                                                    </m:Table>
+                                                </l:BlockLayoutCell>
+                                            </l:BlockLayoutRow>
+                                        </l:BlockLayout>
+                                    </blocks>
+                                </ObjectPageSubSection>
+                            </subSections>
+                        </ObjectPageSection>
+                    </sections>
+
+                    <sections>
+                        <ObjectPageSection title="Communications">
+                            <subSections>
+                                <ObjectPageSubSection>
+                                    <blocks>
+                                        <l:BlockLayout id="blockLayout5">
+                                            <l:BlockLayoutRow>
+                                                <l:BlockLayoutCell
+                                                    backgroundColorSet="{/colorSet}"
+                                                    backgroundColorShade="ShadeC"
+                                                >
+                                                    <form:SimpleForm
+                                                        id="SimpleFormDisplay4812"
+                                                        maxContainerCols="2"
+                                                        editable="false"
+                                                        layout="ResponsiveGridLayout"
+                                                        title="{i18n>communication}: "
+                                                        labelSpanL="4"
+                                                        labelSpanM="4"
+                                                        emptySpanL="0"
+                                                        emptySpanM="0"
+                                                        columnsL="2"
+                                                        columnsM="2"
+                                                    >
+                                                        <form:content>
+                                                            <c:Title text="" />
+                                                            <m:Label
+                                                                text="{i18n>personalemail}"
+                                                            />
+                                                            <m:Link
+                                                                text="{Emp1>/0/Email}"
+                                                                press="handleEmailPress"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>homephone} "
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/HomePhone}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>mobile} "
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/Mobile}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>workemail}"
+                                                            />
+                                                            <m:Link
+                                                                text="{Emp1>/0/Workemail}"
+                                                                press="handleEmailPress"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>zipcode} "
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/ZipCode}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>phone1}"
+                                                            />
+                                                            <m:Link
+                                                                text="{Emp1>/0/DeskPhone}"
+                                                                press="handleTelPress"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>username} "
+                                                            />
+                                                            <m:Text
+                                                                text="{Emp1>/0/Username}"
+                                                            />
+                                                            <m:Label
+                                                                text="{i18n>Website} "
+                                                            />
+                                                            <m:Link
+                                                                text="{Emp1>/0/website}"
+                                                                press="handleWebPress"
+                                                            />
+                                                            <!-- </form:content>
+                            </form:SimpleForm> -->
+
+                                                            <!-- <m:footer> -->
+                                                            <m:OverflowToolbar>
+                                                                <m:ToolbarSpacer
+                                                                />
+
+                                                                <m:HBox>
+                                                                    <m:Image
+                                                                        src="https://museumandgallery.org/wp-content/uploads/2020/03/Facebook-Icon-Facebook-Logo-Social-Media-Fb-Logo-Facebook-Logo-PNG-and-Vector-with-Transparent-Background-for-Free-Download.png"
+                                                                        width="35px"
+                                                                        press="onclickfb"
+                                                                    />
+                                                                    <m:Image
+                                                                        src=" https://cdn.pixabay.com/photo/2016/08/09/17/52/instagram-1581266__340.jpg"
+                                                                        width="35px"
+                                                                        press="onclickinsta"
+                                                                    />
+                                                                    <m:Image
+                                                                        src="https://seeklogo.com/images/T/twitter-logo-7249D46199-seeklogo.com.png "
+                                                                        width="35px"
+                                                                        press="onclicktwitter"
+                                                                    />
+                                                                </m:HBox>
+                                                            </m:OverflowToolbar>
+                                                            <!-- </m:footer> -->
+                                                        </form:content>
+                                                    </form:SimpleForm>
+                                                </l:BlockLayoutCell>
+                                            </l:BlockLayoutRow>
+                                        </l:BlockLayout>
+                                    </blocks>
+                                </ObjectPageSubSection>
+                            </subSections>
+                        </ObjectPageSection>
+                    </sections>
+                </ObjectPageLayout>
+            </m:VBox>
+        </m:content>
+        <m:footer>
+            <m:OverflowToolbar>
+                <m:content>
+                    <m:ToolbarSpacer />
+                    <m:Button
+                        type="Emphasized"
+                        tooltip="Next"
+                        text="Goto First"
+                        press="onPressNext"
+                    />
+                    <!-- <Button text="Grouped View" />
+					<Button text="Classical Table" /> -->
+                </m:content>
+            </m:OverflowToolbar>
+        </m:footer>
+    </m:Page>
+</mvc:View>

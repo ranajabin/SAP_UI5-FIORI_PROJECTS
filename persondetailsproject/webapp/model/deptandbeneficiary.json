@@ -1,0 +1,12 @@
+{
+    "Deptandbeneficiary": [
+        {
+            "FirstName": "Sumit",
+            "DateofBirth": "02/09/1998",
+            "Relationship": "Brother",
+            "Mobile": "928398392",
+            "AddressLine1": "Mumbai",
+            "ZipCode": "3849882"
+        }
+    ]
+}

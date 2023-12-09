@@ -1,0 +1,69 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:unified="sap.ui.unified"
+>
+    <Dialog id="oDialog">
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <PlanningCalendar
+                    id="PC1"
+                    showIntervalHeaders="false"
+                    startDate="{path: '/startDate'}"
+                    minDate="{path: '/minDate'}"
+                    maxDate="{path: '/maxDate'}"
+                    rows="{path: '/people'}"
+                    appointmentsVisualization="Filled"
+                    appointmentSelect="handleAppointmentSelect"
+                >
+                    <toolbarContent>
+                        <Title
+                            text="Title"
+                            titleStyle="H4"
+                        />
+                    </toolbarContent>
+                    <rows>
+                        <PlanningCalendarRow
+                            icon="{pic}"
+                            title="{name}"
+                            text="{role}"
+                            appointments="{path : 'appointments', templateShareable: false}"
+                            intervalHeaders="{path: 'headers', templateShareable: false}"
+                        >
+                            <appointments>
+                                <unified:CalendarAppointment
+                                    startDate="{start}"
+                                    endDate="{end}"
+                                    icon="{pic}"
+                                    title="{title}"
+                                    text="{info}"
+                                    type="{type}"
+                                    tentative="{tentative}"
+                                />
+                            </appointments>
+                            <intervalHeaders>
+                                <unified:CalendarAppointment
+                                    startDate="{start}"
+                                    endDate="{end}"
+                                    icon="{pic}"
+                                    title="{title}"
+                                    type="{type}"
+                                />
+                            </intervalHeaders>
+                        </PlanningCalendarRow>
+                    </rows>
+                </PlanningCalendar>
+            </VBox>
+        </content>
+
+        <beginButton />
+        <endButton>
+            <Button
+                type="Emphasized"
+                text="Ok"
+                press="handleCloseDialog"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

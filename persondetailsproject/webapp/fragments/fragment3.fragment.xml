@@ -1,0 +1,74 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Dialog id="aDialog">
+        <content>
+            <f:SimpleForm
+                id="Form3"
+                title="Dependent and Beneficiary"
+            >
+                <f:content>
+                    <VBox>
+                        <Label text="Name:" />
+                        <Input
+                            value=""
+                            id="_idname"
+                            valueState="Information"
+                        />
+
+                        <Label text="DOB" />
+                        <DatePicker
+                            value=""
+                            id="_iddob"
+                        />
+
+                        <Label text="Relationship" />
+                        <Input
+                            value=""
+                            id="_idrltnshp"
+                            valueState="Information"
+                        />
+
+                        <Label text="Mobile" />
+                        <Input
+                            value=""
+                            id="_idmobile"
+                            valueState="Information"
+                        />
+
+                        <Label text="Address" />
+                        <Input
+                            value=""
+                            id="_idaddrs"
+                            valueState="Information"
+                        />
+
+                        <Label text="Zipcode" />
+                        <Input
+                            value=""
+                            id="_idzipcode"
+                            valueState="Information"
+                        />
+                    </VBox>
+                </f:content>
+            </f:SimpleForm>
+        </content>
+
+        <beginButton>
+            <Button
+                type="Emphasized"
+                text="Save"
+                press="handleSaveDialogAdd"
+            />
+        </beginButton>
+        <endButton>
+            <Button
+                type="Reject"
+                text="Cancel"
+                press="handleCloseDialogAdd"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
