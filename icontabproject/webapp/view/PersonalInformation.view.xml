@@ -1,0 +1,429 @@
+<mvc:View
+    controllerName="Icontab.icontabproject.controller.PersonalInformation"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+    xmlns:t="sap.ui.table"
+    xmlns:f="sap.ui.layout.form"
+    height="100%"
+>
+    <Page
+        title=" {18n>title2}"
+        enableScrolling="true"
+        class="sapUiResponsivePadding--header sapUiResponsivePadding--footer body2"
+        titleAlignment="Center"
+        showNavButton="true"
+        navButtonPress="onNavBack"
+    >
+        <headerContent>
+            <Button
+                icon="sap-icon://log"
+                tooltip="Logout"
+                text="{i18n>logout}"
+                press="onPressLog"
+            />
+        </headerContent>
+
+        <!-- icon="test-resources/sap/m/images/Woman_04.png"
+    icon="{Emp1>/Employee/0/Icon}"     
+    -->
+        <content>
+            <VBox fitContainer="true">
+                <ObjectHeader
+                    icon="{Emp1>/0/Icon}"
+                    iconDensityAware="false"
+                    iconAlt="{Emp1>/0/FirstName} {Emp1>/0/MiddleName} {Emp1>/0/LastName} "
+                    imageShape="Circle"
+                    responsive="false"
+                    title="{Emp1>/0/FirstName} {Emp1>/0/MiddleName} {Emp1>/0/LastName} "
+                    intro="Senior Developer"
+                    class="sapUiResponsivePadding--header"
+                >
+                    <ObjectAttribute
+                        title="{i18n>email}"
+                        text="{Emp1>/0/Email}"
+                        active="true"
+                        press="handleEmailPress"
+                    />
+                    <ObjectAttribute
+                        title="{i18n>phone}"
+                        text="{Emp1>/0/DeskPhone}"
+                        press="handleTelPress"
+                    />
+                    <ObjectAttribute
+                        title="{i18n>functional}"
+                        text="{Emp1>/0/FunctionalArea}"
+                    />
+                    <ObjectAttribute
+                        title="{i18n>location}"
+                        text="{Emp1>/0/AddressLine1}"
+                    />
+                    <ObjectAttribute
+                        title="{i18n>department}"
+                        text="{Emp1>/0/Department}"
+                    />
+                </ObjectHeader>
+
+                <IconTabBar
+                    upperCase="true"
+                    expandable="false"
+                    applyContentPadding="true"
+                    stretchContentHeight="true"
+                    class="sapUiResponsiveContentPadding"
+                >
+                    <items>
+                        <IconTabFilter
+                            key="Per Inf"
+                            text="{i18n>personal} "
+                        >
+                            <f:SimpleForm
+                                id="SimpleFormDisplay480"
+                                minWidth="1024"
+                                maxContainerCols="2"
+                                editable="false"
+                                layout="ResponsiveGridLayout"
+                                title="Personal Info: "
+                                labelSpanL="4"
+                                labelSpanM="4"
+                                emptySpanL="0"
+                                emptySpanM="0"
+                                columnsL="2"
+                                columnsM="2"
+                            >
+                                <f:content>
+                                    <c:Title text="" />
+                                    <Label text="{i18n>firstname} " />
+                                    <Text text="{Emp1>/0/FirstName}" />
+                                    <Label text="{i18n>middlename} " />
+                                    <Text text="{Emp1>/0/MiddleName}" />
+                                    <Label text="{i18n>lastname}" />
+                                    <Text text="{Emp1>/0/LastName}" />
+                                    <Label text="{i18n>nickname} " />
+                                    <Text text="{Emp1>/0/NickName}" />
+                                    <Label text=" {i18n>maritalstatus}" />
+                                    <Text text="{Emp1>/0/MaritalStatus}" />
+                                    <Label text="{i18n>dateofbirth}" />
+                                    <Text text="{Emp1>/0/DateofBirth}" />
+                                </f:content>
+                                <f:layoutData>
+                                    <FlexItemData
+                                        shrinkFactor="0"
+                                        backgroundDesign="Solid"
+                                        styleClass="sapContrastPlus"
+                                    />
+                                </f:layoutData>
+                            </f:SimpleForm>
+                        </IconTabFilter>
+                        <IconTabFilter
+                            key="addrs"
+                            text="{i18n>address}"
+                        >
+                            <f:SimpleForm
+                                id="SimpleFormDisplay481"
+                                minWidth="1024"
+                                maxContainerCols="2"
+                                editable="false"
+                                layout="ResponsiveGridLayout"
+                                title="{i18n>address}: "
+                                labelSpanL="4"
+                                labelSpanM="4"
+                                emptySpanL="0"
+                                emptySpanM="0"
+                                columnsL="2"
+                                columnsM="2"
+                            >
+                                <f:content>
+                                    <c:Title text="{i18n>permanentresidence}" />
+                                    <Label text="{i18n>address1}" />
+                                    <Text text="{Emp1>/0/AddressLine1}" />
+                                    <Label text="{i18n>address2}" />
+                                    <Text text="{Emp1>/0/AddressLine2}" />
+                                    <Label text="{i18n>city} " />
+                                    <Text text="{Emp1>/0/City}" />
+                                    <Label text="{i18n>state} " />
+                                    <Text text="{Emp1>/0/State}" />
+                                    <Label text="{i18n>zipcode} " />
+                                    <Text text="{Emp1>/0/ZipCode}" />
+
+                                    <c:Title text="{i18n>mailing}" />
+
+                                    <Label text="{i18n>address1}" />
+                                    <Text text="{Emp1>/0/AddressLine1}" />
+                                    <Label text="{i18n>address2}" />
+                                    <Text text="{Emp1>/0/AddressLine2}" />
+                                    <Label text="{i18n>city}" />
+                                    <Text text="{Emp1>/0/City}" />
+                                    <Label text="{i18n>state}" />
+                                    <Text text="{Emp1>/0/State}" />
+                                    <Label text="{i18n>zipcode}" />
+                                    <Text text="{Emp1>/0/ZipCode}" />
+                                </f:content>
+                            </f:SimpleForm>
+                        </IconTabFilter>
+
+                        <IconTabFilter
+                            key="Dept Benef"
+                            text="{i18n>depntandbeneficiary} "
+                        >
+                            <Table
+                                backgroundDesign="Translucent"
+                                headerText="{i18n>depntandbeneficiary}:"
+                                alternateRowColors="true"
+                                items="{
+			path: 'Emp1>/'
+			
+		}"
+                                width="100%"
+                                visible="true"
+                                inset="true"
+                                contextualWidth="inherit"
+                            >
+                                <columns>
+                                    <Column
+                                        width="12em"
+                                        minScreenWidth="Tablet"
+                                    >
+                                        <Text text="{i18n>name}" />
+                                    </Column>
+
+                                    <Column
+                                        width="12em"
+                                        minScreenWidth="Tablet"
+                                    >
+                                        <Text text="{i18n>dob}" />
+                                    </Column>
+
+                                    <Column
+                                        width="12em"
+                                        minScreenWidth="Tablet"
+                                    >
+                                        <Text text="{i18n>member}" />
+                                    </Column>
+
+                                    <Column
+                                        width="12em"
+                                        minScreenWidth="Tablet"
+                                    >
+                                        <Text text="{i18n>mobile}" />
+                                    </Column>
+
+                                    <Column
+                                        width="12em"
+                                        minScreenWidth="Tablet"
+                                    >
+                                        <Text text="{i18n>address}" />
+                                    </Column>
+
+                                    <Column
+                                        width="12em"
+                                        minScreenWidth="Tablet"
+                                    >
+                                        <Text text="{i18n>zipcode}" />
+                                    </Column>
+                                </columns>
+
+                                <items>
+                                    <ColumnListItem>
+                                        <cells>
+                                            <Text text="{Emp1>FirstName}" />
+                                            <Text text="{Emp1>DateofBirth}" />
+                                            <Text text="{Emp1>Member}" />
+                                            <Text text="{Emp1>Mobile}" />
+                                            <Text text="{Emp1>AddressLine1}" />
+                                            <Text text="{Emp1>ZipCode}" />
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </IconTabFilter>
+                        <IconTabFilter
+                            key="withholding Info"
+                            text="Withholding Info"
+                        >
+                            <f:SimpleForm
+                                id="SimpleFormDisplay483"
+                                minWidth="1024"
+                                maxContainerCols="2"
+                                editable="false"
+                                layout="ResponsiveGridLayout"
+                                title="{i18n>withholdinginfo}"
+                                labelSpanL="4"
+                                labelSpanM="4"
+                                emptySpanL="0"
+                                emptySpanM="0"
+                                columnsL="2"
+                                columnsM="2"
+                            >
+                                <f:content>
+                                    <c:Title text="" />
+                                    <Label text="{i18n>taxauthority} " />
+                                    <Text text="{Emp1>/0/TaxAuthority}" />
+                                    <Label text="{i18n>name} " />
+                                    <Text text="{Emp1>/0/FirstName}" />
+                                    <Label text="{i18n>ssn}  " />
+                                    <Text text="{Emp1>/0/SSN}" />
+                                    <Label text=" {i18n>allowance}" />
+                                    <Text text="{Emp1>/0/Allowances}" />
+                                    <c:Title text="" />
+                                    <Label text="{i18n>address} " />
+                                    <Text text="{Emp1>/0/AddressLine1}" />
+                                    <Label text=" {i18n>exempt}" />
+                                    <Text text="{Emp1>/0/Exempt}" />
+                                    <Label
+                                        text="{i18n>additionalwitholding} "
+                                    />
+                                    <Text
+                                        text="{Emp1>/0/AdditionalWithholding}"
+                                    />
+                                    <Label text="{i18n>fillingstatus} " />
+                                    <Text text="{Emp1>/0/FillingStatus}" />
+                                </f:content>
+                            </f:SimpleForm>
+                        </IconTabFilter>
+                        <IconTabFilter
+                            key="Bank"
+                            text="{i18n>bankdetails}"
+                        >
+                            <Table
+                                backgroundDesign="Translucent"
+                                headerText="{i18n>bankdetails}:"
+                                alternateRowColors="true"
+                                items="{
+			path: 'Emp1>/',
+			sorter: {
+				path: 'Name'
+			}
+		}"
+                                width="100%"
+                                visible="true"
+                                inset="true"
+                                contextualWidth="inherit"
+                            >
+                                <columns>
+                                    <Column
+                                        width="12em"
+                                        minScreenWidth="Tablet"
+                                    >
+                                        <Text text="{i18n>banktype}" />
+                                    </Column>
+
+                                    <Column
+                                        width="12em"
+                                        minScreenWidth="Tablet"
+                                    >
+                                        <Text text="{i18n>routingnum}" />
+                                    </Column>
+
+                                    <Column
+                                        width="12em"
+                                        minScreenWidth="Tablet"
+                                    >
+                                        <Text text="{i18n>accountnum}" />
+                                    </Column>
+
+                                    <Column
+                                        width="12em"
+                                        minScreenWidth="Tablet"
+                                    >
+                                        <Text text="{i18n>amount}" />
+                                    </Column>
+
+                                    <Column
+                                        width="12em"
+                                        minScreenWidth="Tablet"
+                                    >
+                                        <Text text="{i18n>percent}" />
+                                    </Column>
+                                </columns>
+
+                                <items>
+                                    <ColumnListItem>
+                                        <cells>
+                                            <Text text="{Emp1>BankType}" />
+                                            <Text text="{Emp1>RoutingNum}" />
+                                            <Text text="{Emp1>AccountNum}" />
+                                            <Text text="{Emp1>Amount}" />
+                                            <Text text="{Emp1>Percent}" />
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </IconTabFilter>
+                        <IconTabFilter
+                            key="communication"
+                            text="{i18n>communication}"
+                        >
+                            <f:SimpleForm
+                                id="SimpleFormDisplay4812"
+                                minWidth="1024"
+                                maxContainerCols="2"
+                                editable="false"
+                                layout="ResponsiveGridLayout"
+                                title="{i18n>communication}: "
+                                labelSpanL="4"
+                                labelSpanM="4"
+                                emptySpanL="0"
+                                emptySpanM="0"
+                                columnsL="2"
+                                columnsM="2"
+                            >
+                                <f:content>
+                                    <c:Title text="" />
+                                    <Label text="{i18n>personalemail}" />
+                                    <Text text="{Emp1>/0/Email}" />
+                                    <Label text="{i18n>homephone} " />
+                                    <Text text="{Emp1>/0/HomePhone}" />
+                                    <Label text="{i18n>mobile} " />
+                                    <Text text="{Emp1>/0/Mobile}" />
+                                    <Label text="{i18n>workemail}" />
+                                    <Text text="{Emp1>/0/Workemail}" />
+                                    <Label text="{i18n>zipcode} " />
+                                    <Text text="{Emp1>/0/ZipCode}" />
+                                    <Label text="{i18n>phone1}" />
+                                    <Text text="{Emp1>/0/DeskPhone}" />
+                                    <Label text="{i18n>username} " />
+                                    <Text text="{Emp1>/0/Username}" />
+                                </f:content>
+                            </f:SimpleForm>
+                        </IconTabFilter>
+                    </items>
+                    <content>
+                        <!-- <t:AnalyticalTable visibleRowCountMode="Auto" selectionMode="MultiToggle" rowHeight="32">
+							<t:toolbar>
+								<OverflowToolbar>
+									<ToolbarSpacer />
+									<SearchField width="12rem" />
+									<ToolbarSpacer width="1rem" />
+									<SegmentedButton>
+										<buttons>
+											<Button icon="sap-icon://table-view" />
+											<Button icon="sap-icon://bar-chart" />
+										</buttons>
+									</SegmentedButton>
+									<ToolbarSpacer width="1rem" />
+									<Button icon="sap-icon://group-2" type="Transparent" />
+									<Button icon="sap-icon://action-settings" type="Transparent" />
+								</OverflowToolbar>
+							</t:toolbar>
+							<t:columns>
+								<t:AnalyticalColumn />
+								<t:AnalyticalColumn />
+								<t:AnalyticalColumn />
+								<t:AnalyticalColumn />
+							</t:columns>
+						</t:AnalyticalTable> -->
+                    </content>
+                </IconTabBar>
+            </VBox>
+        </content>
+        <footer>
+            <OverflowToolbar>
+                <content>
+                    <ToolbarSpacer />
+                    <!-- <Button text="Grouped View" />
+					<Button text="Classical Table" /> -->
+                </content>
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>
