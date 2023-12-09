@@ -1,0 +1,40 @@
+<mvc:View controllerName="calc.mycalculator.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}" titleAlignment="Center">
+        <content >
+        <VBox  alignItems="Center" class = "vbx" width = "30rem">
+               <Label text = "Calculator" design="Bold" class = "lbl1" />
+            <Input tooltip =  " Enter your value " width="17rem" id = "_idinpt" ></Input>
+
+            <HBox >
+            <Button text = "7" width = "3.5rem" id = "_idbtn7" press = "onpress_btn('7')" />
+            <!-- <Button text = "7" width = "3.5rem" id = "_idbtn7" press = "this.getView().byId('_idinpt').setValue('7')" />  -->
+            <Button text = "8" width = "3.5rem" id = "_idbtn8" press = " onpress_btn('8') "/>
+            <Button text = "9" width = "3.5rem" id = "_idbtn9" press = " onpress_btn('9')"/>
+            <Button text = "/" width = "3.5rem" id = "_idbtndiv" press = " onpress_btn('/') "/>
+            </HBox>
+            <HBox >
+            <Button text = "4" width = "3.5rem" id = "_idbtn4"  press = " onpress_btn('4')" />
+            <Button text = "5" width = "3.5rem" id = "_idbtn5" press = " onpress_btn('5')" />
+            <Button text = "6" width = "3.5rem" id = "_idbtn6" press = " onpress_btn('6')" />
+            <Button text = "X" width = "3.5rem" id = "_idbtnmul" press = " onpress_btn('*')" />
+            </HBox>
+            <HBox >
+            <Button text = "1" width = "3.5rem" id = "_idbtn1" press = " onpress_btn('1')" />
+            <Button text = "2" width = "3.5rem" id = "_idbtn2" press = " onpress_btn('2')" />
+            <Button text = "3" width = "3.5rem" id = "_idbtn3" press = " onpress_btn('3')" />
+            <Button text = "-" width = "3.5rem" id = "_idbtndash" press = " onpress_btn('-')" />
+            </HBox>
+            <HBox >
+            <Button text = "." width = "3.5rem" id = "_idbtnprd" press = " onpress_btn('.')" />
+            <Button text = "0" width = "3.5rem" id = "_idbtnzero" press = " onpress_btn('0')" />
+            <Button text = "=" width = "3.5rem" id = "_idbtneq" press = "calculateResult()" />
+            <Button text = "+" width = "3.5rem" id = "_idbtnadd" press = " onpress_btn('+')" />
+            </HBox>
+            <Button text = "Clear" width = "15rem" id = "_idbtn17" press = "clearDisplay" ></Button>
+
+        </VBox>
+        </content>
+    </Page>
+</mvc:View>

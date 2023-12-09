@@ -1,0 +1,18 @@
+/* Enter your custom styles here */
+
+.lbl1 {
+    background-color: aqua;
+    font-size: 3rem;
+}
+
+.vbx {
+    margin-top: 10rem;
+    border-style: dotted;
+    border-color: blue;
+    border-radius: 5rem;
+    border-collapse: separate;
+    margin-left: 30rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    box-shadow: rgb(from color r g b);
+}
