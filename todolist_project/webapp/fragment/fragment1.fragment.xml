@@ -1,0 +1,22 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+>
+    <Dialog id="pDialog" title="Create New To Do" class = "sapUiResponsiveContentPadding">
+        <VBox >
+            <Label text="Title" />
+            <Input value="{mCreate>/title}" />
+            <Label text="Description" />
+            <Input value="{mCreate>/description}" />
+            <Label text="Date" />
+            <DatePicker value="{mCreate>/targetDate}" />
+        </VBox>
+
+        <beginButton>
+            <Button
+                text="create"
+                press="saveToDo"
+            />
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>

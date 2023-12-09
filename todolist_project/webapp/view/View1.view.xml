@@ -1,0 +1,58 @@
+<mvc:View
+    controllerName="todo.todolistproject.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <List
+                id="idList"
+                items="{mTodo>/todo_list}"
+                mode="Delete"
+                delete="DeleteTodo"
+            >
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="What to Complete? " />
+                        <ToolbarSpacer />
+                        <Button
+                            icon="sap-icon://add"
+                            text="Create"
+                            press="createTodo"
+                        />
+                    </Toolbar>
+                </headerToolbar>
+                <CustomListItem visible="{=${mTodo>status} === 0}"
+                press="DeleteTodo">
+                    <HBox
+                        class="sapUiSmallMargin"
+                        justifyContent="SpaceBetween"
+                        alignItems="Center"
+                    >
+                        <VBox>
+                            <Label text="{mTodo>title}" />
+                            <Text text="{mTodo>description}" />
+                        </VBox>
+                        <ObjectStatus
+                            text="{path: 'mTodo>targetDate', type: 'sap.ui.model.odata.type.Date' }"
+                            state="Error"
+                        />
+                        <!-- <ObjectStatus
+                            text="{path: 'mTodo>targetDate', type: 'sap.ui.model.odata.type.Date' }"
+                            state="{path: 'mTodo>targetDate', formatter: '.formatter.formatDate'}"
+                        /> -->
+                        <Button
+                            icon="sap-icon://accept"
+                            text="Complete"
+                            press="setToComplete"
+                        />
+                    </HBox>
+                </CustomListItem>
+            </List>
+        </content>
+    </Page>
+</mvc:View>
