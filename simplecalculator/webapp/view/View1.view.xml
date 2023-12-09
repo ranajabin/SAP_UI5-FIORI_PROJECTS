@@ -1,0 +1,28 @@
+<mvc:View controllerName="calc.simplecalculator.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core = "sap.ui.core">
+    <Page id="page" title="{i18n>title}">
+        <content >
+        <VBox alignContent="Center" alignItems="Center" class = "vbx">
+        <HBox >
+        <Label text = "Enter your first number : "></Label>
+        <Input value = "{/oprnd1}" width="10rem"></Input></HBox>
+        <HBox> <Label text = " Select your operator : "></Label>
+        <Select width="10rem" items = "{/aselect}" selectedKey = "{/oprtr}">
+          <items>
+          <core:Item key = "{keyy}" text = "{keyy}" ></core:Item>
+           <!-- <core:Item key = "-" text = "-" ></core:Item>
+            <core:Item key = "*" text = "*" ></core:Item>
+             <core:Item key = "/" text = "/" ></core:Item> -->
+          </items>
+
+        </Select></HBox>
+        <HBox ><Label text = "Enter your second number : "></Label>
+         <Input value = "{/oprnd2}" width="10rem"></Input></HBox>
+         <Button text = "Calculate" type = "Success" width = "20rem" press = "calculateResult"></Button>
+         <Text text = "{parts:[{path: '/result' }], formatter : '.formatResult' }"></Text>
+          </VBox>
+        </content>
+    </Page>
+</mvc:View>
