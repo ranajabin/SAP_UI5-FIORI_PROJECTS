@@ -1,0 +1,35 @@
+<mvc:View
+    controllerName="watch.stopwatch.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+        titleAlignment="Center"
+    >
+        <content>
+            <!-- <f:SimpleForm>
+                <f:content> -->
+                    <VBox
+                        alignContent="Center"
+                        alignItems="Center"
+                        class="vbx"
+                    >
+                    <Label text = "00:00:00" design="Bold" id = "timer" class = "lbl" />
+                     <!-- <Text text = "00:00:00" id = "timer" class = "lbl" /> -->
+                      <!-- <Input value = "00:00:00"  id = "timer" class = "lbl" /> -->
+
+                    <HBox >
+                       <Button icon="sap-icon://stop" press="onPressStop" class = "btn" />
+                       <Button icon="sap-icon://play" press="onPressPlay" class = "btn" />
+                       <Button icon="sap-icon://reset" press="onPressReset" class = "btn" />
+                    </HBox>
+                    </VBox>
+                <!-- </f:content>
+            </f:SimpleForm> -->
+        </content>
+    </Page>
+</mvc:View>
