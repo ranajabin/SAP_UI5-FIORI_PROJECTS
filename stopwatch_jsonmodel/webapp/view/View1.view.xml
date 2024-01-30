@@ -1,0 +1,34 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="watch.stopwatch.controller.View1"
+>
+    <VBox
+        alignContent="Center"
+        alignItems="Center"
+        class="vbx"
+    >
+        <Label
+            text="{stopwatchModel>/time}"
+            class="lbl"
+        />
+        <HBox>
+            <Button
+                text="Start"
+                press="onStartPress"
+                class="btn"
+            />
+
+            <Button
+                text="Stop"
+                press="onStopPress"
+                class="btn"
+            />
+            <Button
+                text="Reset"
+                press="onResetPress"
+                class="btn"
+            />
+        </HBox>
+    </VBox>
+</mvc:View>
