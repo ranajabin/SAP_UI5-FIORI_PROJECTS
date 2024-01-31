@@ -1,0 +1,53 @@
+<mvc:View
+    controllerName="otp.otpexpirecountdown.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+        titleAlignment="Center"
+    >
+        <content>
+            <f:SimpleForm title="OTP Generator">
+                <f:content>
+                    <!-- <Input
+                                        editable="false"
+                                        id="timer"
+                                        value=""
+                                        width="200px"
+                                    /> -->
+                    <VBox
+                        alignContent="Center"
+                        alignItems="Center"
+                        class="sapUiLargeMarginTop"
+                    >
+                        <Label
+                            id="timer"
+                            text=""
+                            width="200px"
+                        />
+                        <Input
+                            placeholder="Enter OTP"
+                            type="Number"
+                            id="_idnum"
+                            value=""
+                            width="200px"
+                        />
+                        <Button
+                            text="Confirm"
+                            type="Emphasized"
+                            press="onPressButton"
+                            width="120px"
+                            class="sapUiTinyMarginTop"
+                        />
+                    </VBox>
+                </f:content>
+            </f:SimpleForm>
+        </content>
+    </Page>
+</mvc:View>
