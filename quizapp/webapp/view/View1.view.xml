@@ -1,0 +1,88 @@
+<mvc:View
+    controllerName="quiz.quizapp.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+        titleAlignment="Center"
+    >
+        <content>
+            <VBox
+                alignContent="Center"
+                alignItems="Center"
+            >
+                <FlexBox
+                    height="100px"
+                    class="sapUiLargeMarginTop"
+                >
+                    <f:SimpleForm
+                        editable="true"
+                        width="350px"
+                        title="Simple Quiz"
+                        class=".sapMFlexBoxBGTransparent "
+                    >
+                        <f:content>
+                            <VBox
+                                alignContent="Center"
+                                alignItems="Center"
+                            >
+                                <Text
+                                    text="All Questions come here!"
+                                    class="myText1"
+                                    id="question"
+                                />
+                                <VBox class = "" id = "btn">
+                                <Button
+                                    text="Answer 1"
+                                    type="Ghost"
+                                    width="300px"
+                                    id="btn1"
+                                    press="onpressbtn"
+                                    validationSuccess="true"                                    
+                                    class="myCustomButton sapUiTinyMarginTop"
+                                />
+                                <Button
+                                    text="Answer 2"
+                                    type="Ghost"
+                                    width="300px"
+                                    id="btn2"
+                                    press="onpressbtn"
+                                    class="myCustomButton"
+                                />
+                                <Button
+                                    text="Answer 3"
+                                    type="Ghost"
+                                    width="300px"
+                                    id="btn3"
+                                    press="onpressbtn"
+                                    class="myCustomButton"
+                                />
+                                <Button
+                                    text="Answer 4"
+                                    type="Ghost"
+                                    width="300px"
+                                    id="btn4"
+                                    press="onpressbtn"
+                                    class="myCustomButton"
+                                />
+                                  </VBox>
+                                <Button
+                                    text="Next"
+                                    type="Emphasized"
+                                    id="btnnxt"
+                                    width="150px"
+                                    press="showQuestion"
+                                    class="myCustomButton sapUiMediumMarginTop"
+                                />
+                            </VBox>
+                        </f:content>
+                    </f:SimpleForm>
+                </FlexBox>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
