@@ -1,0 +1,99 @@
+<mvc:View
+    controllerName="table.datefiltertable.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+        titleAlignment="Center"
+    >
+        <tnt:ToolHeader
+            id="_idToolHeader"
+            class="sapUiTinyMargin"
+        >
+            <ToolbarSpacer />
+            <Label
+                text="From Date"
+                textAlign="Begin"
+                design="Bold"
+            />
+            <Input value="" type="Date" width="20rem" id="_idSdate"></Input>
+            <!-- <DatePicker
+                value=""
+                id="_idSdate"               
+                change="onFilterTable"
+                class="sapUiSmallMargin"
+                width="20rem"
+                 valueFormat="yyyy-MM-dd"
+                displayFormat="dd-MM-yyyy"
+            /> -->
+            <Label
+                text="To Date"
+                class="sapUiSmallMargin"
+                design="Bold"
+            />
+            <Input value="" type="Date" width="20rem" id="_idEdate"></Input>
+            <!-- <DatePicker
+                value=""
+                valueFormat="yyyy-MM-dd"
+                id="_idEdate"
+                change="onFilterTable"
+                class="sapUiSmallMargin"
+                width="20rem"
+                displayFormat="dd-MM-yyyy"
+            /> -->
+
+            <ToolbarSpacer />
+            <Button
+                text="Go"
+                type="Emphasized"
+                press="onPressGo"
+            />
+        </tnt:ToolHeader>
+        <content>
+            <Table
+                id="table1"
+                sticky="HeaderToolbar,ColumnHeaders"
+                inset="false"
+                items="{Data1>/}"
+                class="sapFDynamicPageAlignContent"
+                width="auto"
+                visible="true"
+            >
+                <columns>
+                    <Column>
+                        <Text text="Task Name" />
+                    </Column>
+                    <Column>
+                        <Text text="Start Date" />
+                    </Column>
+                    <Column>
+                        <Text text="End Date" />
+                    </Column>
+                    <Column>
+                        <Text text="Department" />
+                    </Column>
+                    <Column>
+                        <Text text="Person Responsible" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{Data1>Taskname}" />
+                            <Text text="{Data1>Startdate}"></Text>
+                            <!-- <Input value="{Data1>Startdate}" type = "Date"  editable="false"/> -->
+                              <!-- <Text text = "{path : Data1>Startdate  type: new sap.ui.model.type.Date({pattern:"MMM dd, yyyy"})}"/> -->
+                            <Text text="{Data1>Enddate}" />
+                            <Text text="{Data1>Dept}" />
+                            <Text text="{Data1>Person}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
